@@ -8,7 +8,11 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import {
+  provideRouter,
+  withComponentInputBinding,
+  withViewTransitions,
+} from '@angular/router';
 
 import { routes } from './app.routes';
 import { httpInterceptor } from '@core/interceptors/http.interceptor';
@@ -17,7 +21,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
+    provideRouter(routes, withViewTransitions(), withComponentInputBinding()),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptors([httpInterceptor])),
     provideAnimationsAsync(),

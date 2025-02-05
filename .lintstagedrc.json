@@ -1,6 +1,6 @@
 {
   "*.{js,jsx,ts,tsx}": ["npm run prettier:fix", "npm run lint:fix"],
   "*.html": ["npm run prettier:fix", "npm run lint:fix"],
-  "*.{css,scss,sass,less}": ["stylelint --fix", "npm run prettier:fix"],
+  "*.{css,scss,sass,less}": ["npm run prettier:fix"],
   "*.{json,md,yml,yaml}": ["npm run prettier:fix"]
 }

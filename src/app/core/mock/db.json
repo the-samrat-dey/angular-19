@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "1",
       "email": "1",
       "role": "1",
@@ -10,7 +10,7 @@
       "deletedAt": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "2",
       "email": "2",
       "role": "2",
@@ -19,7 +19,7 @@
       "deletedAt": "2"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "3",
       "email": "3",
       "role": "3",
@@ -46,6 +46,30 @@
     },
     {
       "id": "a003",
+      "username": "sam",
+      "email": "email",
+      "password": "pwd"
+    },
+    {
+      "id": "c3cb",
+      "username": "sam",
+      "email": "email",
+      "password": "pwd"
+    },
+    {
+      "id": "b5ba",
+      "username": "sam",
+      "email": "email",
+      "password": "pwd"
+    },
+    {
+      "id": "7d0d",
+      "username": "sam",
+      "email": "email",
+      "password": "pwd"
+    },
+    {
+      "id": "f119",
       "username": "sam",
       "email": "email",
       "password": "pwd"
