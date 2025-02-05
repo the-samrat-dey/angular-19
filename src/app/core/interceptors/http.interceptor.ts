@@ -1,6 +1,7 @@
 import {
   HttpErrorResponse,
   HttpInterceptorFn,
+  HttpRequest,
   HttpStatusCode,
 } from '@angular/common/http';
 import { inject } from '@angular/core';
@@ -26,6 +27,10 @@ const INTERCEPTOR_CONFIG = {
   RETRY_STATUS_CODES: [408, 429, 500, 502, 503, 504],
 };
 
+const API_REWRITE_MAP: Record<string, string> = {
+  'http://localhost:3000/api/v1/auth/signin': 'http://localhost:3000/users',
+};
+
 export const httpInterceptor: HttpInterceptorFn = (request, next) => {
   const router = inject(Router);
   const loadingService = inject(LoadingService);
@@ -34,10 +39,12 @@ export const httpInterceptor: HttpInterceptorFn = (request, next) => {
   // Start loading indicator
   loadingService.start();
 
+  const reroutedRequest = rerouteRequest(request);
+
   // Clone request and add headers
-  const modifiedRequest = request.clone({
+  const modifiedRequest = reroutedRequest.clone({
     setHeaders: getHeaders(),
-    withCredentials: true, // Enable if you're using cookies
+    withCredentials: false, // Enable if you're using cookies
   });
 
   return next(modifiedRequest).pipe(
@@ -67,6 +74,21 @@ export const httpInterceptor: HttpInterceptorFn = (request, next) => {
     })
   );
 };
+
+function rerouteRequest(request: HttpRequest<unknown>): HttpRequest<unknown> {
+  let newUrl = request.url;
+
+  for (const [original, replacement] of Object.entries(API_REWRITE_MAP)) {
+    if (newUrl.startsWith(original)) {
+      newUrl = newUrl.replace(original, replacement);
+      break;
+    }
+  }
+
+  // JSON Server uses PATCH instead of PUT for updates
+  const newMethod = request.method === 'PUT' ? 'PATCH' : request.method;
+  return request.clone({ url: newUrl, method: newMethod });
+}
 
 // Helper functions
 function getHeaders(): Record<string, string> {

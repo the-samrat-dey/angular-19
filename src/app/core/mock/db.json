@@ -1,5 +1,5 @@
 {
-  "/api/v1/auth/signin": [
+  "users": [
     {
       "id": 1,
       "username": "1",
@@ -26,6 +26,29 @@
       "status": "3",
       "isDeleted": "3",
       "deletedAt": "3"
+    },
+    {
+      "id": "6f7c",
+      "email": "mail.samrat.dey@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "9e4f",
+      "username": "sam",
+      "email": "email",
+      "password": "pwd"
+    },
+    {
+      "id": "db4f",
+      "username": "sam",
+      "email": "email",
+      "password": "pwd"
+    },
+    {
+      "id": "a003",
+      "username": "sam",
+      "email": "email",
+      "password": "pwd"
     }
   ]
 }

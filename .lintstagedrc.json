@@ -1,6 +1,6 @@
 {
-  "*.{js,jsx,ts,tsx}": ["npx pretty-quick --staged", "npm run lint:fix"],
-  "*.html": ["npx pretty-quick --staged", "npm run lint:fix"],
-  "*.{css,scss,sass,less}": ["npx pretty-quick --staged"],
-  "*.{json,md,yml,yaml}": ["npx pretty-quick --staged"]
+  "*.{js,jsx,ts,tsx}": ["npm run prettier:fix", "npm run lint:fix"],
+  "*.html": ["npm run prettier:fix", "npm run lint:fix"],
+  "*.{css,scss,sass,less}": ["npm run prettier:fix"],
+  "*.{json,md,yml,yaml}": ["npm run prettier:fix"]
 }
