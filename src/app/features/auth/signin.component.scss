@@ -14,8 +14,8 @@ form {
 
   input {
     width: 100%;
-    padding: 8px;
     margin-top: 4px;
+    padding: 8px;
   }
 
   small {
@@ -24,9 +24,9 @@ form {
 
   button {
     padding: 10px;
-    border: none;
-    background: #007bff;
     color: #fff;
+    background: #007bff;
+    border: none;
     cursor: pointer;
 
     &:disabled {
