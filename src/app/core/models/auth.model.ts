@@ -20,5 +20,5 @@ export interface IUser {
   role: UserRoleEnum;
   status: UserStatus;
   isDeleted: boolean;
-  deletedAt?: Date;
+  deletedAt?: Date | null;
 }

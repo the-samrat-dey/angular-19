@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthService } from '@core/services/auth.service';
 import {
   FormBuilder,
@@ -7,9 +7,9 @@ import {
   Validators,
 } from '@angular/forms';
 
-import { ICredentials } from './auth.model';
 import { IUser } from '@core/models/auth.model';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -17,33 +17,28 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['signin.component.scss'],
   imports: [CommonModule, ReactiveFormsModule],
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent {
   private readonly _authService = inject(AuthService);
+  private readonly _router = inject(Router);
   private _fb = inject(FormBuilder);
 
   signinForm: FormGroup;
 
   constructor() {
     this.signinForm = this._fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
-  }
-
-  ngOnInit(): void {
-    this.onSignIn({ username: 'sam', email: 'email', password: 'pwd' });
   }
 
   onSubmit(): void {
     if (this.signinForm.valid) {
-      this.onSignIn(this.signinForm.value);
+      this._authService.signin(this.signinForm.value).subscribe({
+        next: (user: IUser) => {
+          if (user) this._router.navigate(['/']);
+        },
+        error: (error) => console.error(error),
+      });
     }
-  }
-
-  onSignIn(credentials: ICredentials) {
-    this._authService.signin(credentials).subscribe({
-      next: (user: IUser) => console.log(user),
-      error: (error) => console.error(error),
-    });
   }
 }

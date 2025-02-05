@@ -1,0 +1,45 @@
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.active-link {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.theme-toggle {
+  margin: 0 16px;
+}
+
+mat-icon {
+  margin-right: 4px;
+}
+
+@media (max-width: 768px) {
+  .nav-link span {
+    display: none;
+  }
+
+  mat-icon {
+    margin-right: 0;
+  }
+
+  .header-toolbar {
+    padding: 0 8px;
+  }
+}

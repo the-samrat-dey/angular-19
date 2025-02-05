@@ -14,7 +14,7 @@ export class RoleGuard implements CanActivate {
       return true;
     }
 
-    await this._router.navigate(['/signin']);
+    await this._router.navigate(['/auth']);
     return false;
   }
 }

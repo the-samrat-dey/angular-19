@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <!-- Left side -->
+  <div class="left-section">
+    <a mat-button routerLink="/dashboard" routerLinkActive="active-link" class="nav-link">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </a>
+    <a mat-button routerLink="/users" routerLinkActive="active-link" class="nav-link">
+      <mat-icon>people</mat-icon>
+      <span>Users</span>
+    </a>
+  </div>
+
+  <!-- Right side -->
+  <div class="right-section">
+    <button mat-icon-button (click)="toggleTheme()" class="theme-toggle">
+      <mat-icon [ngStyle]="{ color: isDarkMode() ? '#FFC107' : '#81D4FA' }">{{
+        isDarkMode() ? 'light_mode' : 'dark_mode'
+      }}</mat-icon>
+    </button>
+
+    <!-- Profile Menu -->
+    <button mat-button [matMenuTriggerFor]="profileMenu" class="nav-link">
+      <mat-icon>account_circle</mat-icon>
+      <span>{{ username }}</span>
+    </button>
+    <mat-menu #profileMenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item (click)="signout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

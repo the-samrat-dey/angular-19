@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { LoadingComponent } from '@shared/components/loading/loading.component';
-import { HeaderComponent } from './layout/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule, LoadingComponent, HeaderComponent],
+  imports: [RouterOutlet, RouterModule, LoadingComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent {
