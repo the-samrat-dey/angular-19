@@ -2,7 +2,6 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-standard-scss",
-    "stylelint-config-standard-less",
     "stylelint-config-rational-order"
   ],
   "plugins": [
@@ -34,7 +33,13 @@
     "scss/no-duplicate-dollar-variables": true,
     "order/properties-alphabetical-order": null,
     "plugin/declaration-block-no-ignored-properties": true,
-    "order/order": ["declarations", "custom-properties", "dollar-variables", "rules", "at-rules"],
+    "order/order": [
+      "declarations",
+      "custom-properties",
+      "dollar-variables",
+      "rules",
+      "at-rules"
+    ],
     "order/properties-order": [
       "position",
       "top",

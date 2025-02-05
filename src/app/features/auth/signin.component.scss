@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+
+  div {
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-weight: 700;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+  }
+
+  small {
+    color: #f00;
+  }
+
+  button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+
+    &:disabled {
+      background: #808080;
+      cursor: not-allowed;
+    }
+  }
+}
