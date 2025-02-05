@@ -28,7 +28,7 @@ export class ErrorService {
   );
 
   // Show error message to user
-  showError(message: string, action: string = 'Close'): void {
+  showError(message: string, action = 'Close'): void {
     this.snackBar.open(message, action, {
       duration: 5000,
       horizontalPosition: 'end',
@@ -53,7 +53,7 @@ export class ErrorService {
     }
 
     // Send to error monitoring service (e.g., Sentry)
-    this.sendToErrorMonitoring(error);
+    this.sendToErrorMonitoring();
   }
 
   // Clear error history
@@ -66,7 +66,7 @@ export class ErrorService {
     return this.errorHistory();
   }
 
-  private sendToErrorMonitoring(error: ErrorState): void {
+  private sendToErrorMonitoring(): void {
     // Implementation for your error monitoring service
     // Example with Sentry:
     if (environment.production) {

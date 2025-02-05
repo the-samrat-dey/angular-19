@@ -1,0 +1,2 @@
+# Run the commit-msg validation with the JavaScript file
+node ./scripts/commit-msg.js "$1"

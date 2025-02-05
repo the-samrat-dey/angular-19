@@ -5,7 +5,6 @@ import {
 } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '@core/services/auth.service';
 import { ErrorService } from '@core/services/error.service';
 import { LoadingService } from '@core/services/loading.service';
 import { EMPTY, Observable, timer, throwError } from 'rxjs';
@@ -31,7 +30,6 @@ export const httpInterceptor: HttpInterceptorFn = (request, next) => {
   const router = inject(Router);
   const loadingService = inject(LoadingService);
   const errorService = inject(ErrorService);
-  const authService = inject(AuthService);
 
   // Start loading indicator
   loadingService.start();
