@@ -6,13 +6,13 @@ module.exports = {
       'always',
       [
         'feat', // feature
-        'fix',  // fix
+        'fix', // fix
         'docs', // documentation
         'style', // style changes (formatting, etc.)
         'refactor', // refactor
         'test', // tests
-        'chore' // maintenance tasks
-      ]
+        'chore', // maintenance tasks
+      ],
     ],
     'subject-empty': [2, 'never'],
     'subject-case': [2, 'always', 'lower-case'],
@@ -28,8 +28,8 @@ module.exports = {
     'subject-task-number': [
       2,
       'always',
-      /\s#\d+/ // Matches a space followed by a # and digits (task number format)
+      /\s#\d+/, // Matches a space followed by a # and digits (task number format)
       /* /#\d+$/ // Matches a task number at the end of the message (e.g., #1234) */
-    ]
-  }
+    ],
+  },
 };

@@ -17,7 +17,8 @@ const colors = {
 // Pattern: #[a-z,A-Z]_[0-9], #[0-9]_[a-z,A-Z], #[0-9]_[0-9], #[a-z,A-Z]_[a-z,A-Z], #[0-9], #[a-z,A-Z], #[0-9,a-z,A-Z], #[a-z, A-Z, 0-9]. Below is the regex
 // /^(feat|fix|docs|style|refactor|chore|test): #[a-zA-Z]_[0-9]|#[0-9]_[a-zA-Z]|#[0-9]_[0-9]|#[a-zA-Z]_[a-zA-Z]|#[0-9]|#[a-zA-Z]|#[0-9a-zA-Z]|#[a-zA-Z0-9] .+/;
 // Pattern: #[0-9]. Regex: /^(feat|fix|docs|style|refactor|chore|test): #\d+ .+/
-const commitMessageRegex = /^(feat|fix|docs|style|refactor|chore|test): #\d+ .+/;
+const commitMessageRegex =
+  /^(feat|fix|docs|style|refactor|chore|test): #\d+ .+/;
 
 // Function to display the error message and guidelines
 const displayErrorMessage = () => {
