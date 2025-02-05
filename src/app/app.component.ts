@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { LoadingComponent } from '@shared/components/loading/loading.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterModule, LoadingComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-19';
+  public readonly title =
+    'demo-ng-app sdf   sd fd sf ds f ds fd  f df sd f sd f d f dsf ds f sd f ds f sdf  sdf ds f ds f ds f ds f dsf ds f ds f sdf dsf d';
+
+  private readonly _as12 = this.title;
+  public sadasdas = 'safsfsa';
 }

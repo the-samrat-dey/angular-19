@@ -1,0 +1,47 @@
+# Dependencies
+/node_modules
+/dist
+/.angular
+
+# Build outputs
+/coverage
+/tmp
+/out-tsc
+/bazel-out
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IDE - IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Package Files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment Files
+.env
+.env.*
+
+# Generated Files
+*.generated.*
+*.min.*
+
+# Library files
+/libs/**/*.md
+
+# Test reports
+/reports
+/test-results

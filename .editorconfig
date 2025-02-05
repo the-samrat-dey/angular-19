@@ -1,17 +1,32 @@
-# Editor configuration, see https://editorconfig.org
 root = true
 
 [*]
+# Default settings for all files
 charset = utf-8
 indent_style = space
 indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
+end_of_line = lf
 
-[*.ts]
+# TypeScript/JavaScript specific settings
+[*.{ts,js}]
 quote_type = single
-ij_typescript_use_double_quotes = false
+end_of_line = lf
 
+# HTML files specific settings
+[*.html]
+end_of_line = lf
+
+# SCSS files specific settings
+[*.scss]
+end_of_line = lf
+
+# JSON files specific settings
+[*.json]
+end_of_line = lf
+
+# Markdown files need special handling
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false

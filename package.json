@@ -7,7 +7,13 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint || exit 1",
+    "lint:fix": "ng lint --fix || exit 1",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "lint:styles": "stylelint \"src/**/*.scss\" --max-warnings 0 || exit 1",
+    "lint:styles:fix": "stylelint \"src/**/*.scss\" --fix",
+    "prepare": "node scripts/setup-hooks.js"
   },
   "private": true,
   "dependencies": {
